@@ -12,7 +12,7 @@ arg_parser.add_argument("--test-data", dest="test_file", action="store", default
 argObj = arg_parser.parse_args()
 
 if argObj.test_file == False:
-    model_train.Main()
+    model_train()
 else:
     fizzbuzz(argObj.test_file)
     accuracy()
