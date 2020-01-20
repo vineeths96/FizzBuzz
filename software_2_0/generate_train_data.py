@@ -1,14 +1,21 @@
 import numpy as np
 
+#def binary(num, NUM_DIGITS):
+#    x_binary = np.empty([0])
+#    for index in range(NUM_DIGITS):
+#        x_binary = np.append(x_binary, num >> index & 1)
+
+#   return x_binary
+
 def binary(num, NUM_DIGITS):
-    x_binary = np.empty([0])
+    x_binary = np.zeros([1, NUM_DIGITS])
     for index in range(NUM_DIGITS):
-        x_binary = np.append(x_binary, num >> index & 1)
+        x_binary[0, index] = (num >> index & 1)
 
     return x_binary
 
 
-def category(num):
+def categorize(num):
     y_categorical = np.zeros([4])
     if num % 15 == 0:
         y_categorical[3] = 1
@@ -29,7 +36,7 @@ def generate_train_data(TRAIN_BEGIN, TRAIN_END, CATEGORIES, NUM_DIGITS):
 
     for num in range(TRAIN_BEGIN, TRAIN_END):
         x_binary = binary(num, NUM_DIGITS)
-        y_category = category(num)
+        y_category = categorize(num)
 
         index = num - TRAIN_BEGIN
         X[index] = x_binary

@@ -1,5 +1,10 @@
 def fizzbuzz(fname):
-    input_file = open(fname, 'r')
+    try:
+        input_file = open(fname, 'r')
+    except:
+        print("Input file does not exist. Please try again.\n")
+        exit()
+
     output_file = open("Software1.txt", 'w')
 
     for line in input_file:
