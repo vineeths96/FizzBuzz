@@ -3,7 +3,7 @@ import tensorflow as tf
 
 from software_2_0.generate_train_data import generate_train_data
 
-def Main():
+def model_train():
     # net par
     NUM_DIGITS = 10
     TRAIN_BEGIN = 101
@@ -51,4 +51,4 @@ def Main():
     model.save("./model/fizzbuzz.h5")
 
 if __name__ == "__main__":
-    Main()
+    model_train()
