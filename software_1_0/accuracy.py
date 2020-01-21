@@ -1,3 +1,4 @@
+# Open file and calculate accuracy
 def accuracy():
     test_output = open("test_output.txt", 'r')
     output = open("Software1.txt", 'r')

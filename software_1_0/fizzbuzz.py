@@ -1,4 +1,5 @@
 def fizzbuzz(fname):
+    # Try opening the test file
     try:
         input_file = open(fname, 'r')
     except:
@@ -7,6 +8,7 @@ def fizzbuzz(fname):
 
     output_file = open("Software1.txt", 'w')
 
+    # Find the output class and write it to file
     for line in input_file:
         num = int(line)
         if num%15 == 0:
@@ -18,5 +20,6 @@ def fizzbuzz(fname):
         else:
             output_file.write(str(num) + "\n")
 
+    # Close the files
     input_file.close()
     output_file.close()

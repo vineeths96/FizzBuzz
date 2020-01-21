@@ -1,3 +1,4 @@
+# Open file and calculate accuracy
 def model_accuracy():
     test_output = open("test_output.txt", 'r')
     output = open("Software2.txt", 'r')

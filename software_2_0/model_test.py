@@ -1,6 +1,8 @@
+# Imports
 import tensorflow as tf
 import numpy as np
 
+# Convert to binary sequence
 def binary(num, NUM_DIGITS):
     x_binary = np.zeros([1, NUM_DIGITS])
     for index in range(NUM_DIGITS):
@@ -8,6 +10,7 @@ def binary(num, NUM_DIGITS):
 
     return x_binary
 
+# Deencode the class and write it to file
 def decategorize(cat, line):
     if cat == [0]:
         out_str = str(line)
@@ -24,6 +27,7 @@ def decategorize(cat, line):
 def model_test(fname):
     NUM_DIGITS = 10
 
+    # Try opening the test file
     try:
         input_file = open(fname, 'r')
     except:
@@ -32,12 +36,14 @@ def model_test(fname):
 
     output_file = open("Software2.txt", 'w')
 
+    # Try opening the model
     try:
         model = tf.keras.models.load_model("./model/fizzbuzz.h5")
     except:
         print("Trained model does not exist. Please train the model.\n")
         exit()
 
+    # Find the output class and write it to file
     for line in input_file:
         line_binary = binary(int(line), NUM_DIGITS)
         pred_Y = model.predict_classes(line_binary)
@@ -45,5 +51,6 @@ def model_test(fname):
         out_str = decategorize(pred_Y, line)
         output_file.write(out_str)
 
+    # Close the files
     input_file.close()
     output_file.close()

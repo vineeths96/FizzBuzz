@@ -1,5 +1,7 @@
+# Imports
 import numpy as np
 
+# Convert to binary sequence
 def binary(num, NUM_DIGITS):
     x_binary = np.zeros([1, NUM_DIGITS])
     for index in range(NUM_DIGITS):
@@ -7,7 +9,7 @@ def binary(num, NUM_DIGITS):
 
     return x_binary
 
-
+# Encode to respective classes
 def categorize(num):
     y_categorical = np.zeros([4])
     if num % 15 == 0:
@@ -24,9 +26,11 @@ def categorize(num):
 
 def generate_train_data(TRAIN_BEGIN, TRAIN_END, CATEGORIES, NUM_DIGITS):
     TRAIN_DATA_SIZE = TRAIN_END - TRAIN_BEGIN
+
     X = np.zeros([TRAIN_DATA_SIZE, NUM_DIGITS])
     Y = np.zeros([TRAIN_DATA_SIZE, CATEGORIES])
 
+    # Generate the dataset
     for num in range(TRAIN_BEGIN, TRAIN_END):
         x_binary = binary(num, NUM_DIGITS)
         y_category = categorize(num)
