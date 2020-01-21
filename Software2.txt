@@ -39,7 +39,7 @@ fizz
 fizz
 buzz
 41
-fizz
+42
 43
 44
 fizzbuzz
@@ -65,7 +65,7 @@ fizz
 buzz
 fizz
 67
-68
+fizz
 fizz
 buzz
 71
@@ -90,7 +90,7 @@ fizz
 fizzbuzz
 91
 92
-93
+fizz
 94
 buzz
 fizz

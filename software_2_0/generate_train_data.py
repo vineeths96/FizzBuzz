@@ -1,12 +1,5 @@
 import numpy as np
 
-#def binary(num, NUM_DIGITS):
-#    x_binary = np.empty([0])
-#    for index in range(NUM_DIGITS):
-#        x_binary = np.append(x_binary, num >> index & 1)
-
-#   return x_binary
-
 def binary(num, NUM_DIGITS):
     x_binary = np.zeros([1, NUM_DIGITS])
     for index in range(NUM_DIGITS):
