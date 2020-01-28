@@ -1,5 +1,7 @@
 # Imports
 import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
 
 from software_2_0.generate_train_data import generate_train_data

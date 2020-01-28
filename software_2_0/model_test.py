@@ -1,6 +1,9 @@
 # Imports
-import tensorflow as tf
+import os
 import numpy as np
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+import tensorflow as tf
 
 # Convert to binary sequence
 def binary(num, NUM_DIGITS):
